@@ -1,5 +1,6 @@
 let playerScore = 0;
 let computerScore = 0;
+let playerSelection = prompt('Choose your destiny! Type \"Rock\", \"Paper\" or \"Scissors\"!')
 
 function computerPlay() {
     let randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -63,5 +64,12 @@ function playRound(playerSelection, computerSelection) {
                 return 'Draw! Scissors vs Scissors';
         }
 
+    }
+}
+
+function game(){
+    for(let i = 0; i < 5; i++){
+        console.log(playRound(playerSelection, computerPlay()));
+        console.log(playerScore + ' vs ' + computerScore);
     }
 }
