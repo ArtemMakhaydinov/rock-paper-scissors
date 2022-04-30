@@ -1,6 +1,18 @@
 let playerScore = 0;
 let computerScore = 0;
-let playerSelection = prompt('Choose your destiny! Type \"Rock\", \"Paper\" or \"Scissors\"!')
+let playerSelection = inputChecker();
+game();
+
+function inputChecker(){
+    let input = prompt('Choose your destiny! Type \"Rock\", \"Paper\" or \"Scissors\"!');
+    if (input.toLowerCase() == 'rock' || input.toLowerCase() == 'paper' || input.toLowerCase() == 'scissors'){
+        console.log('Your choice is ' + input);
+        return input;
+    } else {
+        alert('Incorrect input. Enter \"Rock\", \"Paper\" or \"Scissors\" please!')
+        return inputChecker();
+    }
+}
 
 function computerPlay() {
     let randomNumber = Math.floor(Math.random() * 3) + 1;
@@ -18,8 +30,8 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    let playerSelectionNormalised = playerSelection.toLowerCase();
-    if (playerSelectionNormalised == 'rock') {
+    let playerSelectionNormalized = playerSelection.toLowerCase();
+    if (playerSelectionNormalized == 'rock') {
 
         switch (computerSelection) {
             case "Rock":
@@ -34,7 +46,7 @@ function playRound(playerSelection, computerSelection) {
                 return 'You win! Rock beats Scissors';
         }
 
-    } else if (playerSelectionNormalised == 'paper') {
+    } else if (playerSelectionNormalized == 'paper') {
 
         switch (computerSelection) {
             case "Rock":
@@ -49,12 +61,12 @@ function playRound(playerSelection, computerSelection) {
                 return 'You loose! Scissors beats Paper';
         }
 
-    } else if (playerSelectionNormalised == 'scissors') {
+    } else if (playerSelectionNormalized == 'scissors') {
 
         switch (computerSelection) {
             case "Rock":
                 computerScore++;
-                return 'You loose! Rock beats scissors';
+                return 'You loose! Rock beats Scissors';
                 break;
             case "Paper":
                 playerScore++;
@@ -68,8 +80,20 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game(){
-    for(let i = 0; i < 5; i++){
+    for(i = 1; i <= 5; i++){
+        console.log('Round ' + i);
         console.log(playRound(playerSelection, computerPlay()));
         console.log(playerScore + ' vs ' + computerScore);
+    }
+    finalResult();
+}
+
+function finalResult(){
+    if (playerScore < computerScore){
+        console.log('After ' + (i - 1) + ' rounds you LOOSE ' + playerScore + ' vs ' + computerScore + ' LOOSER! BOOOOOO!');
+    } else if (playerScore > computerScore){
+        console.log('After ' + (i - 1) + ' rounds you WIN ' + playerScore + ' vs ' + computerScore + ' WINNER WINNER CHICKEN DINNER!');
+    } else {
+        console.log('After ' + (i - 1)  + ' rounds it\'s DRAW ' + playerScore + ' vs ' + computerScore + ' TRY AGAIN!');
     }
 }
