@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/eb186f213f.js" crossorigin="anonymous"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <!-- JS -->
+    <script src="index.js" defer></script>
 </head>
+
 <body>
-    <script src="index.js"></script>
+
+    <div class="container-title">
+        <h1>Choose your destiny!</h1>
+    </div>
+
+    <div class="container-buttons">
+        <div class="container-button-rock">
+            <button class="rock button"><i class="fa-regular fa-hand-back-fist fa-8x"></i></button>
+        </div>
+
+        <div class="container-button-paper">
+            <button class="paper button"><i class="fa-regular fa-hand fa-8x"></i></button>
+        </div>
+
+        <div class="container-button-scissors">
+            <button class="scissors button"><i class="fa-regular fa-hand-peace fa-8x"></i></button>
+        </div>
+    </div>
+
+    <h2>Result of the battle:</h2>
+
+    <div class="container-game-log">
+        <p class="game-log"></p>
+        <p class="game-log"></p>
+        <p class="game-log"></p>
+        <p class="game-log"></p>
+        <p class="game-log"></p>
+        <p class="result"></p>
+    </div>
+
 </body>
+
 </html>

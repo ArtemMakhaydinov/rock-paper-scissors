@@ -1,0 +1,57 @@
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 5em;
+  margin: 2% auto;
+  text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+}
+
+.container-title {
+  display: flex;
+  justify-content: center;
+}
+
+.container-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.container-button-rock,
+.container-button-paper,
+.container-button-scissors {
+  border-radius: 30px;
+  overflow: hidden;
+  border: 6px solid black;
+  margin: auto 1.5%;
+}
+
+.button {
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  border-width: 0px;
+  background-color: #B3B3B3;
+}
+
+.game-log {
+    white-space: pre;
+    text-align: center;
+    line-height: 1.5em;
+    font-weight: bold;
+}
+
+.result {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.pressed {
+  opacity: 0.5;
+  box-shadow: 0 3px 4px 0 #dbedf3;
+}
